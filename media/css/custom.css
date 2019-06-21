@@ -1,0 +1,104 @@
+#top-nav {
+    background-color: #4f92ff !important;
+}
+.blog-content {
+    background-color: #ffffff;
+}
+.blog {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    -moz-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+}
+.blog-content hr {
+    border-top: 1px solid #4da3ff;
+}
+.blog h1 a {
+    text-decoration: none;
+    font-size: 24px;
+}
+.comment-container {
+    padding: 20px;
+    background-color: #f0f8ff;
+}
+.comment-container .comment-list div {
+    border-bottom: 1px solid #0F8E68;
+    margin: 10px 0;
+}
+.comment-form {
+    overflow: auto;
+}
+.comment-form button {
+    float: right;
+    margin: 10px 0;
+}
+#user-info {
+    -webkit-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    -moz-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+}
+#user-info p {
+    margin: 0;
+    padding: 10px;
+}
+#user-info div:first-child {
+    background-color: #0F8E68;
+    border: none;
+}
+#user-info div:first-child h4 {
+    color: #ffffff;
+    font-size: 20px;
+}
+#popular {
+    -webkit-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    -moz-box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+    box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.52);
+}
+#popular div:first-child {
+    background-color: #0F8E68;
+    border: none;
+}
+#popular div:first-child h4 {
+    color: #ffffff;
+    font-size: 20px;
+}
+#home-btn {
+    color: #ffffff;
+}
+#home-btn:hover {
+    color: #000000;
+}
+#navbar ul li a {
+    color: #ffffff;
+}
+#navbar ul li a:hover {
+    color: #000000;
+}
+
+.login-btn {
+    color: #ffffff !important;
+    border: 1px solid;
+    line-height: 0px !important;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.login-btn:hover {
+    background-color: #ffffff !important;
+    color: #0F8E68 !important;
+}
+.logout-btn {
+    color: #ffffff !important;
+    border: 1px solid;
+    line-height: 0px !important;
+    margin-top: 10px;
+}
+.logout-btn:hover {
+    background-color: #ffffff !important;
+    color: rgb(0, 0, 0) !important;
+}
+.footer {
+    background-color: #4f92ff;
+}
