@@ -14,11 +14,11 @@
       <textarea rows="10" type="text" class="form-control" id="" placeholder="enter content" name="data[content]"></textarea>
     </div>
     <div class="form-group">
-    <label for="photo" class="col-sm-2 control-label">Photo</label>
-    <div class="col-sm-10 image-upload">
-      <input name="image" type="file" class="form-control" id="photo" placeholder="photo">
+      <label for="photo" class="col-sm-2 control-label">Photo</label>
+      <div class="col-sm-10 image-upload">
+        <input name="image" type="file" class="form-control" id="photo" placeholder="photo">
+      </div>
     </div>
-  </div>
     
     <button name="btn_submit" type="submit" class="btn btn-primary">Add</button>
   </form>

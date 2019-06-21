@@ -1,6 +1,8 @@
 body {
   padding-top: 70px;
-  /* padding-bottom: 30px; */
+	padding-bottom: 100px;
+	position: relative;
+	min-height: 100vh;
 }
 .theme-showcase .navbar .container {
   width: auto;

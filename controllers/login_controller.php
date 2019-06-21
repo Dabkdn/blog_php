@@ -30,10 +30,10 @@ class login_controller extends main_controller
 				
 				$_SESSION['username'] = $username;
 				$_SESSION['userid'] = $userId;
-				header("location: http://localhost/sdphpoopmvc2/sdphpoopmvc/index.php");
+				header("location: index.php");
 			}else {
 				$error = "Your Login Name or Password is invalid";
-				header("location: http://localhost/sdphpoopmvc2/sdphpoopmvc/index.php?ctl=login");
+				header("location: index.php?ctl=login");
 			}
 		}
 	}
@@ -45,7 +45,7 @@ class login_controller extends main_controller
 
 		// destroy the session 
 		session_destroy(); 
-		header("location: http://localhost/sdphpoopmvc2/sdphpoopmvc/index.php");
+		header("location: index.php");
 	}
 }
 ?>

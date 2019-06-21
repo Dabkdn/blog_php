@@ -10,7 +10,7 @@ $enableOB = true;
 <div id="login-form">
     <h2>Register Form</h2>
 
-    <form action="<?php echo html_helpers::url(
+    <form enctype="multipart/form-data" action="<?php echo html_helpers::url(
                     array('ctl'=>'register', 
                             'act'=>'register')); ?>" method="post">
     
@@ -28,10 +28,16 @@ $enableOB = true;
 
         <label><b>Confirm Password</b></label>
         <input type="password" placeholder="Confirm Password" name="data[confirmPassword]" required>
+        <div class="form-group">
+            <label for="photo" class="col-sm-2 control-label">Photo</label>
+            <div class="col-sm-10 image-upload">
+                <input name="image" type="file" class="form-control" id="photo" placeholder="photo">
+            </div>
+        </div>
             
         <button type="submit" name="submit">Register</button>
     </form>
     
 </div>
-
+<script src="media/js/form.js"></script>
 <?php include_once 'views/layout/'.$this->layout.'footer.php'; ?>

@@ -101,4 +101,10 @@
 }
 .footer {
     background-color: #4f92ff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#avatar {
+    width: 100%;
 }
