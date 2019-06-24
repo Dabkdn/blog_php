@@ -5,7 +5,16 @@ class blog_model extends main_model
 	public function __construct() {
 		parent::__construct();
 		
-	}
+    }
+    public function isLiked($blog_id) {
+        $query = "SELECT reaction FROM `reactions` WHERE blog_id = $blog_id AND user_id = {$_SESSION['userid']}";
+        $result = mysqli_query($this->con,$query);
+        if($result) {
+            $record = mysqli_fetch_assoc($result);
+            if($record['reaction']) return true;
+            else return false;
+		} else return false;
+    }
 
 	public function getAllRecords() {
 		$query = "SELECT blogs.id, blogs.title, blogs.content, blogs.user_id, users.fullname, likequantity.likequantity, commentquantity.commentquantity, blogs.slug 

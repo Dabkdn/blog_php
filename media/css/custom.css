@@ -108,3 +108,10 @@
 #avatar {
     width: 100%;
 }
+
+.isLiked {
+    color: #0F8E68;
+}
+.unLiked {
+    color: #7e7e7e;
+}

@@ -16,6 +16,7 @@ class home_controller extends main_controller
 		$blog = new blog_model();
 		$this->record = $blog->getRecord($id);
 		$this->comments = $blog->getComments($id);
+		$this->isLiked = $blog->isLiked($id);
 		$this->display();
 	}
 }

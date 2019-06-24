@@ -19,7 +19,10 @@ class blogs_controller extends main_controller
 			$blog = new blog_model();
 			$blog->like($id);
 			$record = $blog->getRecord($id);
-			echo $record['likequantity']==null ? 0:$record['likequantity'];
+			//echo $record['likequantity']==null ? 0:$record['likequantity'];
+			$isLiked = $blog->isLiked($id);
+			$response = array("likeQuantity"=>$record['likequantity']==null ? 0:$record['likequantity'], "isLiked"=>$isLiked);
+			echo json_encode($response);
 		}
 		
 		

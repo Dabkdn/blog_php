@@ -13,7 +13,13 @@ $(document).ready(function(){
                 if(parseInt(response) == -1) {
                     window.location.href = 'index.php?ctl=login'
                 }
-                $(".like-btn .like").text(response);
+                
+                var myObj = $.parseJSON(response);
+                $(".like-btn .like").text(myObj['likeQuantity']);
+                if(myObj['isLiked']== true) {
+                    $('a.like-btn').removeClass('unLiked').addClass('isLiked');
+                }
+                else $('a.like-btn').removeClass('isLiked').addClass('unLiked');
             },
             error: function(xhr){
                 console.log(xhr)
