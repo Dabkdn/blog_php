@@ -15,7 +15,7 @@ class login_controller extends main_controller
 			$password = $_POST['password'];
 
 			$user = new user_model();
-			$record = $user->getAllRecords('*', ['conditions' => "username ="."'$username'"." and password ="."'$password'"]);
+			$record = $user->getAllRecords('*', ['conditions' => "(username ="."'$username'"." and password ="."'$password') or (email="."'$username'"."and password="."'$password')"]);
 
 			
 
@@ -23,13 +23,16 @@ class login_controller extends main_controller
 			while($row = mysqli_fetch_array($record))
 			{
 				$userId = $row['id'];
+				$userRole = $row['role'];
+				$userName = $row['username'];
 				$count++;
 			}
 			
 			if($count == 1) {
 				
-				$_SESSION['username'] = $username;
-				$_SESSION['userid'] = $userId;
+				$_SESSION['userName'] = $userName;
+				$_SESSION['userRole'] = $userRole;
+				$_SESSION['userId'] = $userId;
 				header("location: index.php");
 			}else {
 				$error = "Your Login Name or Password is invalid";

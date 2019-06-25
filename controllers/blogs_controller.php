@@ -3,7 +3,7 @@ class blogs_controller extends main_controller
 {
 	public function index() 
 	{
-		if(!isset($_SESSION['username']) || $_SESSION['username'] != 'Admin'){
+		if(!isset($_SESSION['userName']) || $_SESSION['userRole'] != 1){
 			header("Location: index.php?ctl=login");
 		}
 		$blogs = new blog_model();
@@ -12,7 +12,7 @@ class blogs_controller extends main_controller
 	} 
 
 	public function like($id) {
-		if(!isset($_SESSION['username'])){
+		if(!isset($_SESSION['userName'])){
 			echo -1;
 		}
 		else {
@@ -28,7 +28,7 @@ class blogs_controller extends main_controller
 		
 	}	
 	public function comment() {
-		if(!isset($_SESSION['username'])){
+		if(!isset($_SESSION['userName'])){
 			echo -1;
 		}
 		else {
@@ -45,7 +45,7 @@ class blogs_controller extends main_controller
 	}
 	public function add() 
 	{
-		if(!isset($_SESSION['username'])){
+		if(!isset($_SESSION['userName'])){
 			header("Location: index.php?ctl=login");
 		}
 		if(isset($_POST['btn_submit'])) {
@@ -60,7 +60,7 @@ class blogs_controller extends main_controller
 
 	public function view($id) 
 	{
-		if(!isset($_SESSION['username']) || $_SESSION['username'] != 'Admin'){
+		if(!isset($_SESSION['userName']) || $_SESSION['userRole'] != 1){
 			header("Location: index.php?ctl=login");
 		}
 		$blog = new blog_model();

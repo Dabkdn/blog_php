@@ -8,9 +8,9 @@
 	</div>
 	<p><?php echo $data['content'] ?></p>
 	<p>Author: <?php echo $data['fullname']?></p>
-	<p class="user-id" style="display: none;"><?php echo $_SESSION['userid'] ?></p>
+	<p class="user-id" style="display: none;"><?php echo $_SESSION['userId'] ?></p>
 	<p class="blog-id" style="display: none;"><?php echo $data['id'] ?></p>
-	<a class='like-btn <?php if($isLike == true) echo "isLiked"; else echo "unLiked"?>'>
+	<a class='like-btn <?php if($isLiked == true) echo "isLiked"; else echo "unLiked"?>'>
 		<i class='fa fa-thumbs-o-up'></i>
 		<label class='like'>
 			<?php echo $data['likequantity']==null? 0:$data['likequantity']; ?>

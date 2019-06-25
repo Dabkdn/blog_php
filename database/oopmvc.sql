@@ -41,6 +41,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role` INT(11) NOT NULL,
   `username` varchar(30) DEFAULT NOT NULL,
   `password` varchar(10) DEFAULT NOT NULL,
   `email` varchar(50) DEFAULT NOT NULL,

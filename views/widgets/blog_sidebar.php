@@ -1,4 +1,4 @@
-<?php if( isset( $_SESSION['username'] ) ) { ?>
+<?php if( isset( $_SESSION['userName'] ) ) { ?>
 <div class="list-group" id="user-info">
 	<div href="#" class="list-group-item">
 		<h4 class="list-group-item-heading"><?php echo $user['fullname']?></h4>

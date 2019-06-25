@@ -7,7 +7,7 @@ class blog_model extends main_model
 		
     }
     public function isLiked($blog_id) {
-        $query = "SELECT reaction FROM `reactions` WHERE blog_id = $blog_id AND user_id = {$_SESSION['userid']}";
+        $query = "SELECT reaction FROM `reactions` WHERE blog_id = $blog_id AND user_id = {$_SESSION['userId']}";
         $result = mysqli_query($this->con,$query);
         if($result) {
             $record = mysqli_fetch_assoc($result);
@@ -57,7 +57,7 @@ class blog_model extends main_model
 
 	public function like($blog_id){
 		if($this->findReaction($blog_id) != null) {
-			$query = "UPDATE reactions SET reaction= !reaction WHERE blog_id=$blog_id AND user_id ={$_SESSION['userid']}";
+			$query = "UPDATE reactions SET reaction= !reaction WHERE blog_id=$blog_id AND user_id ={$_SESSION['userId']}";
 			return mysqli_query($this->con,$query);
 		}
 		else {
@@ -66,12 +66,12 @@ class blog_model extends main_model
 	}
 	
 	public function addReaction($blog_id) {
-		$query = "INSERT INTO `reactions`(`blog_id`, `user_id`, `reaction`) VALUES ($blog_id,{$_SESSION['userid']},1)";
+		$query = "INSERT INTO `reactions`(`blog_id`, `user_id`, `reaction`) VALUES ($blog_id,{$_SESSION['userId']},1)";
 		return mysqli_query($this->con, $query);
 	}
 
 	public function findReaction($blog_id) {
-		$query = "SELECT * FROM `reactions` WHERE blog_id=$blog_id AND user_id ={$_SESSION['userid']}";
+		$query = "SELECT * FROM `reactions` WHERE blog_id=$blog_id AND user_id ={$_SESSION['userId']}";
 		$result = mysqli_query($this->con,$query);
 		if($result) {
 			$record = mysqli_fetch_assoc($result);
@@ -84,23 +84,21 @@ class blog_model extends main_model
 		FROM comments
 		INNER JOIN users ON comments.user_id = users.id
 		WHERE blog_id = $blog_id
-		ORDER BY comments.id";
+		ORDER BY comments.id DESC";
 		$result = mysqli_query($this->con,$query);
 
 		return $result;
 	}
 
 	public function addComment($blog_id, $content) {
-		$query = "INSERT INTO `comments`(`blog_id`, `user_id`, `content`) VALUES ($blog_id, {$_SESSION['userid']}, '$content')";
+		$query = "INSERT INTO `comments`(`blog_id`, `user_id`, `content`) VALUES ($blog_id, {$_SESSION['userId']}, '$content')";
 		return mysqli_query($this->con, $query);
 	}
 
 	public function addBlog($data) {
 		date_default_timezone_set("Asia/Ho_Chi_Minh");
-		//exit('hello');
-		// $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $data['title']))).'-'.time();
 		$slug = slugify($data['title']).'-'.time();
-		$query = "INSERT INTO `blogs`(`title`, `content`, `user_id`, `photo`, `slug`) VALUES ('{$data['title']}', '{$data['content']}', {$_SESSION['userid']}, '{$data['photo']}', '$slug')";
+		$query = "INSERT INTO `blogs`(`title`, `content`, `user_id`, `photo`, `slug`) VALUES ('{$data['title']}', '{$data['content']}', {$_SESSION['userId']}, '{$data['photo']}', '$slug')";
 		return mysqli_query($this->con, $query);
 	}
 }

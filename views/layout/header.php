@@ -51,11 +51,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <?php if( isset( $_SESSION['username'] ) && $_SESSION['username'] == 'Admin') { ?>
+                    <?php if( isset( $_SESSION['userName'] ) && $_SESSION['userRole'] == 1) { ?>
                       <li><a href="<?php echo html_helpers::url(array('ctl'=>'blogs')); ?>">Blog</a></li>
                     <?php } ?>
                     <?php
-                      if( isset( $_SESSION['username'] ) )
+                      if( isset( $_SESSION['userName'] ) )
                       {
                     ?>
                     <li>
@@ -67,7 +67,7 @@
                           'act'=>'logout')); ?>">Logout
                         </a>
                     </li>
-                    <li><p style="color:#ffffff;line-height: 50px;margin: 0 0 0 10px;">welcome <?php echo $_SESSION['username'];?></p></li>
+                    <li><p style="color:#ffffff;line-height: 50px;margin: 0 0 0 10px;">welcome <?php echo $_SESSION['userName'];?></p></li>
                     <?php
                       }
                       else 

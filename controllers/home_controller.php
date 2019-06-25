@@ -7,7 +7,7 @@ class home_controller extends main_controller
 		$blogs = new blog_model();
 		$user = new user_model();
 		$this->records = $blogs->getAllRecords();
-		$this->user = $user->getUser($_SESSION['userid']);
+		$this->user = $user->getUser($_SESSION['userId']);
 		$this->display();
 	} 
 
