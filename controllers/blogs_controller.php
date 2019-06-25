@@ -3,7 +3,7 @@ class blogs_controller extends main_controller
 {
 	public function index() 
 	{
-		if(!isset($_SESSION['userName']) || $_SESSION['userRole'] != 1){
+		if(!isset($_SESSION['userName'])){
 			header("Location: index.php?ctl=login");
 		}
 		$blogs = new blog_model();
@@ -60,7 +60,7 @@ class blogs_controller extends main_controller
 
 	public function view($id) 
 	{
-		if(!isset($_SESSION['userName']) || $_SESSION['userRole'] != 1){
+		if(!isset($_SESSION['userName'])){
 			header("Location: index.php?ctl=login");
 		}
 		$blog = new blog_model();

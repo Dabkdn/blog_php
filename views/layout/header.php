@@ -51,7 +51,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <?php if( isset( $_SESSION['userName'] ) && $_SESSION['userRole'] == 1) { ?>
+                    <?php if( isset( $_SESSION['userName'] )) { ?>
                       <li><a href="<?php echo html_helpers::url(array('ctl'=>'blogs')); ?>">Blog</a></li>
                     <?php } ?>
                     <?php

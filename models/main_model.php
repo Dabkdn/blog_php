@@ -36,7 +36,6 @@ class Main_Model
 			$conditions .= ' where '.$options['conditions'];
 		}
 		$query = "SELECT ".$fields." FROM ".$this->table.$conditions;
-
 		$result = mysqli_query($this->con,$query);
 
 		return $result;

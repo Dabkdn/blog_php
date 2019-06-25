@@ -16,9 +16,7 @@ class login_controller extends main_controller
 
 			$user = new user_model();
 			$record = $user->getAllRecords('*', ['conditions' => "(username ="."'$username'"." and password ="."'$password') or (email="."'$username'"."and password="."'$password')"]);
-
-			
-
+	
 			$count = 0;
 			while($row = mysqli_fetch_array($record))
 			{

@@ -4,8 +4,8 @@ class blog_model extends main_model
 	protected $table = 'blogs';
 	public function __construct() {
 		parent::__construct();
-		
     }
+
     public function isLiked($blog_id) {
         $query = "SELECT reaction FROM `reactions` WHERE blog_id = $blog_id AND user_id = {$_SESSION['userId']}";
         $result = mysqli_query($this->con,$query);
